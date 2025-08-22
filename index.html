@@ -6,84 +6,115 @@
   <title>Diencode.tk | APK & Portfolio</title>
   <style>
     body {
-      background-color: #000;
+      background: #000;
       color: #0f0;
       font-family: 'Courier New', Courier, monospace;
       padding: 20px;
       margin: 0;
+      overflow-x: hidden;
+    }
+
+    /* Canvas nền matrix */
+    canvas#matrix {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #000;
     }
 
     h1 {
-      color: #00ffff;
-      border-bottom: 2px solid #00ffff;
+      color: #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+      border-bottom: 2px solid #0ff;
       padding-bottom: 10px;
       font-size: 6vw;
+      animation: flicker 2s infinite alternate;
+    }
+    @keyframes flicker {
+      0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1; }
+      20%,24%,55% { opacity: 0.3; }
     }
 
     h2 {
       color: #ff00ff;
-      margin-top: 40px;
       font-size: 5vw;
+      text-shadow: 0 0 12px #ff00ff;
+      border-left: 4px solid #ff00ff;
+      padding-left: 8px;
+      margin-top: 40px;
     }
 
     h3 {
       color: #ffff00;
       font-size: 4.5vw;
+      text-shadow: 0 0 10px #ffff00;
     }
 
     .video-title {
       color: #0ff;
       font-size: 5vw;
       margin: 20px 0 10px;
+      text-shadow: 0 0 10px #0ff;
     }
 
     iframe {
       width: 100%;
       height: 56.25vw;
-      border: none;
+      border: 2px solid #0ff;
+      box-shadow: 0 0 20px #0ff;
       margin-bottom: 30px;
+      border-radius: 12px;
     }
 
     a {
-      color: #00ffff;
+      color: #0ff;
       text-decoration: none;
-      word-break: break-word;
+      transition: 0.3s;
     }
-
     a:hover {
-      text-decoration: underline;
+      color: #ff0;
+      text-shadow: 0 0 10px #ff0;
     }
 
     .apk {
       border: 2px solid #0ff;
-      padding: 10px;
+      padding: 15px;
       margin-bottom: 20px;
-      background-color: #111;
-      border-radius: 10px;
+      background: rgba(0, 20, 20, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff;
+      animation: glowBox 3s infinite alternate;
+    }
+    @keyframes glowBox {
+      from { box-shadow: 0 0 10px #0ff; }
+      to   { box-shadow: 0 0 25px #0ff; }
     }
 
     .apk img {
       max-width: 100%;
-      height: auto;
-      display: block;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #0ff;
       margin-bottom: 10px;
-      border: 2px solid #00f;
-      border-radius: 5px;
     }
 
     .download-btn {
       display: inline-block;
-      background-color: #0f0;
+      background: linear-gradient(90deg, #0f0, #0ff);
       color: #000;
       padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-weight: bold;
       font-size: 4vw;
+      text-shadow: 0 0 5px #fff;
+      transition: 0.3s;
     }
-
     .download-btn:hover {
-      background-color: #ff0;
+      background: linear-gradient(90deg, #ff0, #f0f);
+      color: #000;
+      box-shadow: 0 0 20px #ff0;
     }
 
     .new-label {
@@ -94,9 +125,7 @@
       -webkit-text-fill-color: transparent;
       animation: rainbowGlow 3s linear infinite;
       margin-right: 6px;
-      display: inline-block;
     }
-
     @keyframes rainbowGlow {
       0% { background-position: 0% }
       100% { background-position: 400% }
@@ -108,7 +137,6 @@
       display: inline-block;
       margin-right: 6px;
     }
-
     @keyframes changeIcon {
       0%   { content: "🌐"; }
       25%  { content: "🐙"; }
@@ -117,17 +145,54 @@
       100% { content: "🌐"; }
     }
 
-    ul {
-      font-size: 4vw;
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 3.5vw;
+      box-shadow: 0 0 20px #0f0;
+      animation: typing 4s steps(60, end);
+      white-space: pre-wrap;
     }
 
-    p {
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    button {
+      background: #0f0;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
       font-size: 4vw;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #0f0;
+    }
+    button:hover {
+      background: #ff0;
+      box-shadow: 0 0 20px #ff0;
+    }
+
+    ul { font-size: 4vw; }
+    p  { font-size: 4vw; }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 3.5vw;
+      margin-top: 50px;
+      text-shadow: 0 0 5px #0ff;
     }
   </style>
 </head>
 <body>
-👷🏻‍♀️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️💰
+  <!-- Nền Matrix -->
+  <canvas id="matrix"></canvas>
   <h1>💻DienCode 🤝 DevMiner🇻🇳</h1>
 
   <div class="video-title">🎬 Hướng dẫn đào coin</div>
@@ -151,20 +216,15 @@
     </div>
   </section>
 
-  <!-- ✅ PHẦN TÍCH HỢP COPY TOOL VERUS -->
   <section id="verus">
     <h2>⚙️ Tool Auto Đào Verus</h2>
     <p>Sao chép đoạn lệnh bên dưới và dán vào Termux để cài đặt tool:</p>
 
-    <pre id="verusText" style="background:#111; color:#0f0; padding:15px; border-radius:8px; font-size:3.5vw; overflow-x:auto;">
-pkg update && pkg install git && pkg upgrade && git clone https://github.com/Ngocgiau2000/notcompile.git && cd notcompile && chmod +x verus-bot.sh && ./verus-bot.sh
-    </pre>
+    <pre id="verusText">pkg update && pkg install git && pkg upgrade && git clone https://github.com/Ngocgiau2000/notcompile.git && cd notcompile && chmod +x verus-bot.sh && ./verus-bot.sh</pre>
 
     <textarea id="hiddenCopy" style="position:absolute; left:-9999px; top:0;"></textarea>
 
-    <button onclick="copyCommand()" style="margin-top:10px; background:#0f0; color:#000; padding:10px 20px; border:none; border-radius:5px; font-size:4vw; font-weight:bold; cursor:pointer;">
-      📋 Copy Lệnh
-    </button>
+    <button onclick="copyCommand()">📋 Copy Lệnh</button>
   </section>
 
   <section id="about">
@@ -179,19 +239,16 @@ pkg update && pkg install git && pkg upgrade && git clone https://github.com/Ngo
     </ul>
 
     <h3><span class="new-label">New</span>Cảm Ơn Ủng Hộ Tôi MB BANK</h3>
-    nhấp vào hình ảnh hoặc QR  
+    Nhấp vào hình ảnh hoặc QR  
     <a href="https://freeimage.host/i/FvXD3iP"><img src="https://iili.io/FvXD3iP.th.jpg" alt="FvXD3iP.th.jpg"></a>
   </section>
 
-  <footer style="text-align:center; color:#888; font-size:3.5vw; margin-top:50px;">
-    ©Devdien 2025/2026 admin
+  <footer>
+    © Devdien 2025/2026 admin
   </footer>
 
-  ......[> ]....[? ]....[! ]......<br>
-  ANTI CODE MODS
-
-  <!-- ✅ SCRIPT COPY -->
   <script>
+    // Copy lệnh
     function copyCommand() {
       const text = document.getElementById("verusText").innerText.trim();
       const hiddenInput = document.getElementById("hiddenCopy");
@@ -200,6 +257,50 @@ pkg update && pkg install git && pkg upgrade && git clone https://github.com/Ngo
       document.execCommand("copy");
       alert("✅ Đã copy lệnh vào bộ nhớ tạm!");
     }
+
+    // Hiệu ứng Matrix chữ chạy xuống
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-<>/";
+    const matrix = letters.split("");
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0f0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+
+    // Resize canvas khi thay đổi kích thước cửa sổ
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
   </script>
 </body>
 </html>
