@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diencode.tk | APK & Portfolio</title>
-
-  <!-- Google AdSense (chỉ cần 1 lần trong head) -->
+  
+  <!-- Google AdSense Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4305793834918657"
        crossorigin="anonymous"></script>
 
@@ -18,180 +18,31 @@
       margin: 0;
       overflow-x: hidden;
     }
-
-    canvas#matrix {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: #000;
-    }
-
-    h1 {
-      color: #0ff;
-      text-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
-      border-bottom: 2px solid #0ff;
-      padding-bottom: 10px;
-      font-size: 6vw;
-      animation: flicker 2s infinite alternate;
-    }
-    @keyframes flicker {
-      0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1; }
-      20%,24%,55% { opacity: 0.3; }
-    }
-
-    h2 {
-      color: #ff00ff;
-      font-size: 5vw;
-      text-shadow: 0 0 12px #ff00ff;
-      border-left: 4px solid #ff00ff;
-      padding-left: 8px;
-      margin-top: 40px;
-    }
-
-    h3 {
-      color: #ffff00;
-      font-size: 4.5vw;
-      text-shadow: 0 0 10px #ffff00;
-    }
-
-    .video-title {
-      color: #0ff;
-      font-size: 5vw;
-      margin: 20px 0 10px;
-      text-shadow: 0 0 10px #0ff;
-    }
-
-    iframe {
-      width: 100%;
-      height: 56.25vw;
-      border: 2px solid #0ff;
-      box-shadow: 0 0 20px #0ff;
-      margin-bottom: 30px;
-      border-radius: 12px;
-    }
-
-    a {
-      color: #0ff;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    a:hover {
-      color: #ff0;
-      text-shadow: 0 0 10px #ff0;
-    }
-
-    .apk {
-      border: 2px solid #0ff;
-      padding: 15px;
-      margin-bottom: 20px;
-      background: rgba(0, 20, 20, 0.8);
-      border-radius: 12px;
-      box-shadow: 0 0 20px #0ff;
-      animation: glowBox 3s infinite alternate;
-    }
-    @keyframes glowBox {
-      from { box-shadow: 0 0 10px #0ff; }
-      to   { box-shadow: 0 0 25px #0ff; }
-    }
-
-    .apk img {
-      max-width: 100%;
-      border: 2px solid #0ff;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #0ff;
-      margin-bottom: 10px;
-    }
-
-    .download-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #0f0, #0ff);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 4vw;
-      text-shadow: 0 0 5px #fff;
-      transition: 0.3s;
-    }
-    .download-btn:hover {
-      background: linear-gradient(90deg, #ff0, #f0f);
-      color: #000;
-      box-shadow: 0 0 20px #ff0;
-    }
-
-    .new-label {
-      font-weight: bold;
-      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowGlow 3s linear infinite;
-      margin-right: 6px;
-    }
-    @keyframes rainbowGlow {
-      0% { background-position: 0% }
-      100% { background-position: 400% }
-    }
-
-    .icon-rotate::after {
-      content: "🌐";
-      animation: changeIcon 4s steps(4) infinite;
-      display: inline-block;
-      margin-right: 6px;
-    }
-    @keyframes changeIcon {
-      0%   { content: "🌐"; }
-      25%  { content: "🐙"; }
-      50%  { content: "📱"; }
-      75%  { content: "📢"; }
-      100% { content: "🌐"; }
-    }
-
-    pre {
-      background: #111;
-      color: #0f0;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 3.5vw;
-      box-shadow: 0 0 20px #0f0;
-      animation: typing 4s steps(60, end);
-      white-space: pre-wrap;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    button {
-      background: #0f0;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      font-size: 4vw;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 0 15px #0f0;
-    }
-    button:hover {
-      background: #ff0;
-      box-shadow: 0 0 20px #ff0;
-    }
-
-    ul { font-size: 4vw; }
-    p  { font-size: 4vw; }
-
-    footer {
-      text-align: center;
-      color: #888;
-      font-size: 3.5vw;
-      margin-top: 50px;
-      text-shadow: 0 0 5px #0ff;
-    }
+    canvas#matrix { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; background:#000; }
+    h1 { color:#0ff; text-shadow:0 0 15px #0ff, 0 0 25px #0ff; border-bottom:2px solid #0ff; padding-bottom:10px; font-size:6vw; animation:flicker 2s infinite alternate; }
+    @keyframes flicker { 0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;} 20%,24%,55%{opacity:0.3;} }
+    h2 { color:#ff00ff; font-size:5vw; text-shadow:0 0 12px #ff00ff; border-left:4px solid #ff00ff; padding-left:8px; margin-top:40px; }
+    h3 { color:#ffff00; font-size:4.5vw; text-shadow:0 0 10px #ffff00; }
+    .video-title { color:#0ff; font-size:5vw; margin:20px 0 10px; text-shadow:0 0 10px #0ff; }
+    iframe { width:100%; height:56.25vw; border:2px solid #0ff; box-shadow:0 0 20px #0ff; margin-bottom:30px; border-radius:12px; }
+    a { color:#0ff; text-decoration:none; transition:0.3s; }
+    a:hover { color:#ff0; text-shadow:0 0 10px #ff0; }
+    .apk { border:2px solid #0ff; padding:15px; margin-bottom:20px; background:rgba(0,20,20,0.8); border-radius:12px; box-shadow:0 0 20px #0ff; animation:glowBox 3s infinite alternate; }
+    @keyframes glowBox { from{box-shadow:0 0 10px #0ff;} to{box-shadow:0 0 25px #0ff;} }
+    .apk img { max-width:100%; border:2px solid #0ff; border-radius:8px; box-shadow:0 0 15px #0ff; margin-bottom:10px; }
+    .download-btn { display:inline-block; background:linear-gradient(90deg,#0f0,#0ff); color:#000; padding:10px 20px; border-radius:8px; font-weight:bold; font-size:4vw; text-shadow:0 0 5px #fff; transition:0.3s; }
+    .download-btn:hover { background:linear-gradient(90deg,#ff0,#f0f); color:#000; box-shadow:0 0 20px #ff0; }
+    .new-label { font-weight:bold; background:linear-gradient(45deg,red,orange,yellow,green,cyan,blue,violet,red); background-size:400%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:rainbowGlow 3s linear infinite; margin-right:6px; }
+    @keyframes rainbowGlow { 0%{background-position:0%} 100%{background-position:400%} }
+    .icon-rotate::after { content:"🌐"; animation:changeIcon 4s steps(4) infinite; display:inline-block; margin-right:6px; }
+    @keyframes changeIcon { 0%{content:"🌐";}25%{content:"🐙";}50%{content:"📱";}75%{content:"📢";}100%{content:"🌐";} }
+    pre { background:#111; color:#0f0; padding:15px; border-radius:8px; font-size:3.5vw; box-shadow:0 0 20px #0f0; animation:typing 4s steps(60,end); white-space:pre-wrap; }
+    @keyframes typing { from{width:0;} to{width:100%;} }
+    button { background:#0f0; color:#000; border:none; border-radius:8px; padding:10px 20px; font-size:4vw; font-weight:bold; cursor:pointer; transition:0.3s; box-shadow:0 0 15px #0f0; }
+    button:hover { background:#ff0; box-shadow:0 0 20px #ff0; }
+    ul { font-size:4vw; } p { font-size:4vw; }
+    footer { text-align:center; color:#888; font-size:3.5vw; margin-top:50px; text-shadow:0 0 5px #0ff; animation:glowFooter 2s infinite alternate; }
+    @keyframes glowFooter { from{text-shadow:0 0 5px #0ff;} to{text-shadow:0 0 20px #0ff;} }
   </style>
 </head>
 <body>
@@ -202,27 +53,14 @@
   <div class="video-title">🎬 Hướng dẫn đào coin</div>
   <iframe src="https://www.youtube.com/embed/0-KLXn6YdqE?si=k5XCCnBdIXOd-uNo" allowfullscreen></iframe>
 
-  <!-- ads1 dưới video -->
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-client="ca-pub-4305793834918657"
-       data-ad-slot="7400109995"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
   <section id="apk">
     <h2>File APK Mod Vip</h2>
-
     <div class="apk">
       <h3><span class="new-label">New</span>Tool App Termux Mod Script</h3>
       <img src="https://iili.io/FvWB9Jp.th.png" alt="FvWB9Jp.th.png">
       <p>Một công cụ mạnh mẽ để mod, script và tự động hóa trên Termux.</p>
       <a href="https://f-droid.org/repo/com.termux_1021.apk" class="download-btn">Tải xuống</a>
     </div>
-
     <div class="apk">
       <h3><span class="new-label">New</span>Tool app Boot Start Termux</h3>
       <img src="https://iili.io/FvWV3SR.th.jpg" alt="FvWV3SR.th.jpg">
@@ -231,25 +69,11 @@
     </div>
   </section>
 
-  <!-- ads2 dưới danh sách APK -->
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-client="ca-pub-4305793834918657"
-       data-ad-slot="7400109995"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
   <section id="verus">
     <h2>⚙️ Tool Auto Đào Verus</h2>
     <p>Sao chép đoạn lệnh bên dưới và dán vào Termux để cài đặt tool:</p>
-
     <pre id="verusText">pkg update && pkg install git && pkg upgrade && git clone https://github.com/Ngocgiau2000/notcompile.git && cd notcompile && chmod +x verus-bot.sh && ./verus-bot.sh</pre>
-
     <textarea id="hiddenCopy" style="position:absolute; left:-9999px; top:0;"></textarea>
-
     <button onclick="copyCommand()">📋 Copy Lệnh</button>
   </section>
 
@@ -263,7 +87,6 @@
       <li>📱 Zalo: <a href="https://zalo.me/0123456789" target="_blank">@ chưa update</a></li>
       <li>📢 Telegram: <a href="https://t.me/diencode" target="_blank">@chưa update</a></li>
     </ul>
-
     <h3><span class="new-label">New</span>Cảm Ơn Ủng Hộ Tôi MB BANK</h3>
     Nhấp vào hình ảnh hoặc QR  
     <a href="https://freeimage.host/i/FvXD3iP"><img src="https://iili.io/FvXD3iP.th.jpg" alt="FvXD3iP.th.jpg"></a>
@@ -274,60 +97,45 @@
   </footer>
 
   <script>
-    // Copy lệnh
     function copyCommand() {
       const text = document.getElementById("verusText").innerText.trim();
-      const hiddenInput = document.getElementById("hiddenCopy");
-      hiddenInput.value = text;
-      hiddenInput.select();
-      document.execCommand("copy");
-      alert("✅ Đã copy lệnh vào bộ nhớ tạm!");
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector("button");
+        btn.innerText = "✅ Đã Copy!";
+        setTimeout(() => (btn.innerText = "📋 Copy Lệnh"), 2000);
+      });
     }
 
-    // Hiệu ứng Matrix chữ chạy xuống
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
-
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
     const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-<>/";
     const matrix = letters.split("");
-
     const fontSize = 16;
     const columns = canvas.width / fontSize;
     const drops = [];
-
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
-    }
+    for (let x = 0; x < columns; x++) drops[x] = 1;
 
     function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = "rgba(0,0,0,0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.fillStyle = "#0f0";
       ctx.font = fontSize + "px monospace";
-
       for (let i = 0; i < drops.length; i++) {
         const text = matrix[Math.floor(Math.random() * matrix.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
     }
-
     setInterval(draw, 50);
 
-    // Resize canvas khi thay đổi kích thước cửa sổ
     window.addEventListener("resize", () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
     });
   </script>
 </body>
-  </html>
-  
+</html>
